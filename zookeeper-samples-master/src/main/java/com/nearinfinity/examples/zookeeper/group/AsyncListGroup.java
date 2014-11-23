@@ -3,7 +3,7 @@ package com.nearinfinity.examples.zookeeper.group;
 import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.KeeperException;
 
-import com.aplicacao.ConnectionWatcher;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionWatcher;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;

@@ -6,8 +6,7 @@ import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 
-import com.aplicacao.BlockingWriteLock;
-import com.aplicacao.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
 import com.nearinfinity.examples.zookeeper.util.RandomAmountOfWork;
 
 /**

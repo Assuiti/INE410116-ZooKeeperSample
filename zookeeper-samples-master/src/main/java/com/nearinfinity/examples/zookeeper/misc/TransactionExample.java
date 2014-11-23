@@ -1,7 +1,5 @@
 package com.nearinfinity.examples.zookeeper.misc;
 
-import com.aplicacao.ConnectionHelper;
-
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.OpResult;

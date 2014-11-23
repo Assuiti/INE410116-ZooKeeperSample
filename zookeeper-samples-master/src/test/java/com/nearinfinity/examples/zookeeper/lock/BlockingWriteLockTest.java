@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import com.aplicacao.BlockingWriteLock;
-import com.aplicacao.ConnectionHelper;
-import com.aplicacao.EmbeddedZooKeeperServer;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.EmbeddedZooKeeperServer;
 
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;

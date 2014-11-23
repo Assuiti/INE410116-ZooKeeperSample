@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.zookeeper.KeeperException;
 
-import com.aplicacao.ConnectionWatcher;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionWatcher;
 
 public class DeleteGroup extends ConnectionWatcher {
 

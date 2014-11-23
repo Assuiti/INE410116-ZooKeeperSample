@@ -8,7 +8,7 @@ import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.data.Stat;
 
-import com.aplicacao.ConnectionWatcher;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionWatcher;
 
 public class ActiveKeyValueStore extends ConnectionWatcher {
 

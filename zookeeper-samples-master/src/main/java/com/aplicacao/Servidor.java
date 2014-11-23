@@ -6,6 +6,9 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.apache.zookeeper.ZooKeeper;
 
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.EmbeddedZooKeeperServer;
+
 public class Servidor {
 
     private ConnectionHelper _connectionHelper;

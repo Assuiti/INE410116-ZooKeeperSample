@@ -6,6 +6,8 @@ import java.nio.ByteBuffer;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.data.Stat;
 
+import com.nearinfinity.examples.zookeeper.misc.ConnectionWatcher;
+
 public class Operador extends ConnectionWatcher {
 
 	public String nome;

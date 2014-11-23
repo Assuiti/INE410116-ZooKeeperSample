@@ -1,4 +1,4 @@
-package com.aplicacao;
+package com.nearinfinity.examples.zookeeper.misc;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;

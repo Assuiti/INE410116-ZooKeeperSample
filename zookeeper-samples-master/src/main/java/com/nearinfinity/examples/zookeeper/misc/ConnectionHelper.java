@@ -1,4 +1,4 @@
-package com.aplicacao;
+package com.nearinfinity.examples.zookeeper.misc;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

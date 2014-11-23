@@ -4,7 +4,7 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;
 
-import com.aplicacao.ConnectionWatcher;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionWatcher;
 
 public class JoinGroup extends ConnectionWatcher {
 

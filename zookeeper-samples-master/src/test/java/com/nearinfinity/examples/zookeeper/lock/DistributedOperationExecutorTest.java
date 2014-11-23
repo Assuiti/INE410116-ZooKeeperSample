@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.aplicacao.ConnectionHelper;
-import com.aplicacao.EmbeddedZooKeeperServer;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.EmbeddedZooKeeperServer;
 
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;

@@ -11,8 +11,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.aplicacao.ConnectionHelper;
-import com.aplicacao.EmbeddedZooKeeperServer;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.EmbeddedZooKeeperServer;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

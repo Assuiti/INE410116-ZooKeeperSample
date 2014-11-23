@@ -7,7 +7,7 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.recipes.lock.LockListener;
 import org.apache.zookeeper.recipes.lock.WriteLock;
 
-import com.aplicacao.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
 import com.nearinfinity.examples.zookeeper.util.RandomAmountOfWork;
 
 /**

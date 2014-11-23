@@ -44,6 +44,7 @@ public class WriteLock extends ProtocolSupport {
 
     private final String dir;
     private String id;
+    private String prefix;
     private ZNodeName idName;
     private String ownerId;
     private String lastChildId;
@@ -115,7 +116,10 @@ public class WriteLock extends ProtocolSupport {
                 ZooKeeperOperation zopdel = new ZooKeeperOperation() {
                     public boolean execute() throws KeeperException,
                         InterruptedException {
-                        zookeeper.delete(id, -1);   
+                    	if (id.charAt(0) == '/')
+                    		zookeeper.delete(id, -1);
+                    	else
+                    		zookeeper.delete(dir + "/" + prefix, -1);   
                         return Boolean.TRUE;
                     }
                 };
@@ -192,7 +196,6 @@ public class WriteLock extends ProtocolSupport {
                     LOG.debug("Created id: " + id);
                 }
             }
-
         }
         
         /**
@@ -204,7 +207,7 @@ public class WriteLock extends ProtocolSupport {
             do {
                 if (id == null) {
                     long sessionId = zookeeper.getSessionId();
-                    String prefix = "x-" + sessionId + "-";
+                    prefix = "x-" + sessionId + "-";
                     // lets try look up the current ID if we failed 
                     // in the middle of creating the znode
                     findPrefixInChildren(prefix, zookeeper, dir);

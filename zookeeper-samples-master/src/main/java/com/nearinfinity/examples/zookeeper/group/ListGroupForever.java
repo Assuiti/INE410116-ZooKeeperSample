@@ -9,7 +9,7 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
-import com.aplicacao.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
 
 public class ListGroupForever {
 

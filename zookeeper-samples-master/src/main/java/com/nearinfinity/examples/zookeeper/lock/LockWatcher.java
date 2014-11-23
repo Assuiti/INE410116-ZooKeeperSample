@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
-import com.aplicacao.ConnectionHelper;
+import com.nearinfinity.examples.zookeeper.misc.ConnectionHelper;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;

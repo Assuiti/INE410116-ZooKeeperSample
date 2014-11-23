@@ -1,4 +1,4 @@
-package com.aplicacao;
+package com.nearinfinity.examples.zookeeper.lock;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -13,7 +13,7 @@ import org.apache.zookeeper.recipes.lock.WriteLock;
 
 public class BlockingWriteLock {
 
-    private String _name;
+    //private String _name;
     private String _path;
     private WriteLock _writeLock;
     private CountDownLatch _lockAcquiredSignal = new CountDownLatch(1);
@@ -25,22 +25,18 @@ public class BlockingWriteLock {
     }
 
     public BlockingWriteLock(String name, ZooKeeper zookeeper, String path, List<ACL> acl) {
-        _name = name;
+        //_name = name;
         _path = path;
-        _writeLock = new WriteLock(zookeeper, path, acl, new SyncLockListener());
+        _writeLock = new WriteLock(zookeeper, _path, acl, new SyncLockListener());
     }
 
-    @SuppressWarnings("static-access")
 	public void lock() throws InterruptedException, KeeperException {
         _writeLock.lock();
-    	Thread.currentThread().sleep(50);
         _lockAcquiredSignal.await();
     }
 
-    @SuppressWarnings("static-access")
     public boolean lock(long timeout, TimeUnit unit) throws InterruptedException, KeeperException {
     	_writeLock.lock();
-    	Thread.currentThread().sleep(50);
         return _lockAcquiredSignal.await(timeout, unit);
     }
 
@@ -48,19 +44,8 @@ public class BlockingWriteLock {
         return lock(2, TimeUnit.SECONDS);
     }
 
-    @SuppressWarnings("static-access")
     public void unlock() throws InterruptedException {
-    	Thread.currentThread().sleep(50);
-    	String temp1 = _writeLock.getId();
-    	String temp2 = _writeLock.getDir();
-    	
-        try {
-			_writeLock.unlock();
-		} catch (IllegalArgumentException e) {
-			System.out.println("------------------" + temp1 + " --- " + temp2);
-			e.printStackTrace();
-		}
-    	Thread.currentThread().sleep(50);
+		_writeLock.unlock();
     }
 
     class SyncLockListener implements LockListener {

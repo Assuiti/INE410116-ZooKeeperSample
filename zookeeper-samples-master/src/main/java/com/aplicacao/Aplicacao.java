@@ -14,6 +14,7 @@ public class Aplicacao {
 		Servidor servidor = criarServidor();
 		
         String topZnodePath = "/conta";
+        
         criarNode(servidor, topZnodePath);
         
         ClienteThread cliente1 = new ClienteThread();
@@ -32,7 +33,7 @@ public class Aplicacao {
 	public static Servidor criarServidor() throws IOException, InterruptedException {
 		Servidor servidor = new Servidor();
 		if (servidor.get_zooKeeper().getState() == ZooKeeper.States.CONNECTED)
-			System.out.println("conectou aeee");
+			System.out.println("Conectado ao zooKeeper.");
 		return servidor;
 	}
 	

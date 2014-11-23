@@ -3,7 +3,8 @@ package com.aplicacao;
 import java.io.IOException;
 
 import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.ZooDefs;
+
+import com.nearinfinity.examples.zookeeper.lock.BlockingWriteLock;
 
 public class Cliente extends Operador {
 
@@ -20,17 +21,17 @@ public class Cliente extends Operador {
 		return node;
 	}
 	
-    public void executar() throws Exception {
+    @SuppressWarnings("static-access")
+	public void executar() throws Exception {
         try {
-    		System.out.println("_________________________________________________");
-        	
         	connect(Servidor.ZK_CONNECTION_STRING);
-    		System.out.println("-------------------------------------");
+    		System.out.println("Cliente " + this.nome + " conectado.");
         	
-            for (int index = 1; index <= 40; index++) {
+            for (int index = 1; index <= 60; index++) {
+            	Thread.currentThread().sleep(15);            	
                 enviarMensagem(index);
             }
-            System.out.println("AEEEEEEEEEEEEEEEEEEEEEEE");
+            System.out.println("Cliente " + this.nome + " finalizado.");
             close();
             
         } catch (Exception e) {
@@ -103,6 +104,10 @@ public class Cliente extends Operador {
 		default:
 			break;
 		}
-    	System.out.println("Cliente: " + nome + "  " + this.node + " Index: " + index + " OP: " + strOP + " Data: " + dataOLD + " Saldo: " + dataNEW);
+    	System.out.println("Cliente: " + nome + 
+    			           " Index: " + index + 
+    			           " OP: " + strOP + 
+    			           " Data: " + customRound(dataOLD, 2) + 
+    			           " Saldo: " + customRound(dataNEW, 2));
     }
 }

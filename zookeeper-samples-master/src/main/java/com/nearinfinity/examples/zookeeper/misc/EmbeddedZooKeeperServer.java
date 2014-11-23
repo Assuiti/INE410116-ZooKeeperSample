@@ -1,4 +1,4 @@
-package com.aplicacao;
+package com.nearinfinity.examples.zookeeper.misc;
 
 import java.io.File;
 import java.io.IOException;

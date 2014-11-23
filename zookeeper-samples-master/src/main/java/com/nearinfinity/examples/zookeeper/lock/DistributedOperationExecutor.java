@@ -8,8 +8,6 @@ import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
 
-import com.aplicacao.BlockingWriteLock;
-
 public class DistributedOperationExecutor {
 
     private ZooKeeper _zk;
