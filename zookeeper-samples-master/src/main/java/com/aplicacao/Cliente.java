@@ -21,14 +21,13 @@ public class Cliente extends Operador {
 		return node;
 	}
 	
-    @SuppressWarnings("static-access")
 	public void executar() throws Exception {
         try {
         	connect(Servidor.ZK_CONNECTION_STRING);
     		System.out.println("Cliente " + this.nome + " conectado.");
         	
             for (int index = 1; index <= 60; index++) {
-            	Thread.currentThread().sleep(15);            	
+            	//Thread.currentThread().sleep(15);
                 enviarMensagem(index);
             }
             System.out.println("Cliente " + this.nome + " finalizado.");

@@ -15,11 +15,11 @@ public class Operador extends ConnectionWatcher {
 	public Stat stat = new Stat();
 	
     public void setDataByteArray(byte[] value) throws KeeperException, InterruptedException {
-    	zk.setData(this.node, value, stat.getVersion());
+    	stat = zk.setData(this.node, value, stat.getVersion());
     }
     
     public byte[] getDataByteArray() throws KeeperException, InterruptedException {
-    	return zk.getData(this.node, false, stat);
+    	return zk.getData(this.node, true, stat);
     }
     
     public void setDataInt(int value) throws KeeperException, InterruptedException {
